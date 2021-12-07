@@ -94,7 +94,7 @@ $(CLIENT_OPT).c $(CLIENT_OPT).h: $(CLIENT_OPT).ggo
 	gengetopt < $(CLIENT_OPT).ggo --file-name=$(CLIENT_OPT_NODIR)  --set-package=$(CLIENT) --output-dir=$(DIR_GENGETOPT)
 	
 clean:
-	rm -f *.o core.* *~ .*~ $(SERVER) $(CLIENT) *.bak $(SERVER_OPT).h $(SERVER_OPT).c $(CLIENT_OPT).h $(CLIENT_OPT).c $(DIR_GENGETOPT)/*.o $(DIR_LIBS)/*.o $(DIR_COMMON)/*.o
+	rm -f *.o core.* *~ .*~ $(SERVER) $(CLIENT) *.bak $(SERVER_OPT).h $(SERVER_OPT).c $(CLIENT_OPT).h $(CLIENT_OPT).c $(DIR_GENGETOPT)/*.o $(DIR_LIBS)/*.o $(DIR_COMMON)/*.o $(DIR_SRC)/*.o
 
 docs: Doxyfile
 	doxygen Doxyfile

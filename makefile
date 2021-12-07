@@ -26,15 +26,15 @@ IFLAGS=-linux -brs -brf -br
 
 # ! SERVER
 SERVER=server
-SERVER_OPT=$(DIR_GENGETOPT)/server_opt
 SERVER_OPT_NODIR=server_opt
+SERVER_OPT=$(DIR_GENGETOPT)/$(SERVER_OPT_NODIR)
 SERVER_OBJS=$(DIR_SRC)/$(SERVER).o $(DIR_LIBS)/debug.o $(DIR_LIBS)/memory.o $(DIR_LIBS)/string_aux.o $(DIR_LIBS)/inet_aux.o $(SERVER_OPT).o
 SERVER_HEADERS=$(DIR_SRC)/$(SERVER).c $(DIR_LIBS)/debug.h $(DIR_LIBS)/memory.h $(DIR_LIBS)/string_aux.h $(DIR_LIBS)/inet_aux.h $(DIR_COMMON)/common.h $(SERVER_OPT).h
 
 # ! CLIENT
 CLIENT=client
-CLIENT_OPT=$(DIR_GENGETOPT)/client_opt
 CLIENT_OPT_NODIR=client_opt
+CLIENT_OPT=$(DIR_GENGETOPT)/$(CLIENT_OPT_NODIR)
 CLIENT_OBJS=$(DIR_SRC)/$(CLIENT).o $(DIR_LIBS)/debug.o $(DIR_LIBS)/memory.o $(DIR_LIBS)/string_aux.o $(DIR_LIBS)/inet_aux.o $(CLIENT_OPT).o
 CLIENT_HEADERS=$(DIR_SRC)/$(CLIENT).c $(DIR_LIBS)/debug.h $(DIR_LIBS)/memory.h $(DIR_LIBS)/string_aux.h $(DIR_LIBS)/inet_aux.h $(DIR_COMMON)/common.h $(CLIENT_OPT).h
 

@@ -81,7 +81,7 @@ int count_ones(int input)
 {
     int counter = 0;
 
-    for (int i = 0; i < (int)sizeof(int); i++)
+    for (int i = 0; i < (int)sizeof(int) * 8; i++)
     {
         counter += is_bit_n_set(input, i);
     }

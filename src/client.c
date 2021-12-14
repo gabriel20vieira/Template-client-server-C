@@ -14,6 +14,7 @@
 #include "../libs/debug.h"
 #include "../common/common.h"
 #include "../libs/binary_aux.h"
+#include "../libs/inet_aux.h"
 #include "../gengetopt/client_opt.h"
 
 int main(int argc, char *argv[])

@@ -28,15 +28,15 @@ IFLAGS=-linux -brs -brf -br
 SERVER=server
 SERVER_OPT_NODIR=server_opt
 SERVER_OPT=$(DIR_GENGETOPT)/$(SERVER_OPT_NODIR)
-SERVER_OBJS=$(DIR_SRC)/$(SERVER).o $(DIR_LIBS)/debug.o $(DIR_LIBS)/memory.o $(DIR_LIBS)/string_aux.o $(DIR_LIBS)/inet_aux.o $(SERVER_OPT).o
-SERVER_HEADERS=$(DIR_SRC)/$(SERVER).c $(DIR_LIBS)/debug.h $(DIR_LIBS)/memory.h $(DIR_LIBS)/string_aux.h $(DIR_LIBS)/inet_aux.h $(DIR_COMMON)/common.h $(SERVER_OPT).h
+SERVER_OBJS=$(DIR_SRC)/$(SERVER).o $(DIR_LIBS)/debug.o $(DIR_LIBS)/memory.o $(DIR_LIBS)/string_aux.o $(DIR_LIBS)/inet_aux.o $(SERVER_OPT).o $(DIR_LIBS)/binary_aux.o
+SERVER_HEADERS=$(DIR_SRC)/$(SERVER).c $(DIR_LIBS)/debug.h $(DIR_LIBS)/memory.h $(DIR_LIBS)/string_aux.h $(DIR_LIBS)/inet_aux.h $(DIR_COMMON)/common.h $(SERVER_OPT).h $(DIR_LIBS)/binary_aux.h
 
 # ! CLIENT
 CLIENT=client
 CLIENT_OPT_NODIR=client_opt
 CLIENT_OPT=$(DIR_GENGETOPT)/$(CLIENT_OPT_NODIR)
-CLIENT_OBJS=$(DIR_SRC)/$(CLIENT).o $(DIR_LIBS)/debug.o $(DIR_LIBS)/memory.o $(DIR_LIBS)/string_aux.o $(DIR_LIBS)/inet_aux.o $(CLIENT_OPT).o
-CLIENT_HEADERS=$(DIR_SRC)/$(CLIENT).c $(DIR_LIBS)/debug.h $(DIR_LIBS)/memory.h $(DIR_LIBS)/string_aux.h $(DIR_LIBS)/inet_aux.h $(DIR_COMMON)/common.h $(CLIENT_OPT).h
+CLIENT_OBJS=$(DIR_SRC)/$(CLIENT).o $(DIR_LIBS)/debug.o $(DIR_LIBS)/memory.o $(DIR_LIBS)/string_aux.o $(DIR_LIBS)/inet_aux.o $(CLIENT_OPT).o $(DIR_LIBS)/binary_aux.o
+CLIENT_HEADERS=$(DIR_SRC)/$(CLIENT).c $(DIR_LIBS)/debug.h $(DIR_LIBS)/memory.h $(DIR_LIBS)/string_aux.h $(DIR_LIBS)/inet_aux.h $(DIR_COMMON)/common.h $(CLIENT_OPT).h $(DIR_LIBS)/binary_aux.h
 
 # ! DEPENDENCIES GO TO - # Dependencies vendor
 
@@ -73,6 +73,7 @@ $(DIR_LIBS)/debug.o: $(DIR_LIBS)/debug.c $(DIR_LIBS)/debug.h
 $(DIR_LIBS)/memory.o: $(DIR_LIBS)/memory.c $(DIR_LIBS)/memory.h
 $(DIR_LIBS)/inet_aux.o: $(DIR_LIBS)/inet_aux.c $(DIR_LIBS)/inet_aux.h
 $(DIR_LIBS)/string_aux.o: $(DIR_LIBS)/string_aux.c $(DIR_LIBS)/string_aux.h
+$(DIR_LIBS)/binary_aux.o: $(DIR_LIBS)/binary_aux.c $(DIR_LIBS)/binary_aux.h
 
 # disable warnings from gengetopt generated files
 $(SERVER_OPT).o: $(SERVER_OPT).c $(SERVER_OPT).h

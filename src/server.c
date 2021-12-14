@@ -1,7 +1,7 @@
 /**
  * @file: server.c
- * @date: 2016-11-17
- * @author: autor
+ * @date: 14-12-2021
+ * @author: author
  */
 #include <stdio.h>
 #include <sys/types.h>
@@ -16,22 +16,21 @@
 #include "../common/common.h"
 #include "../gengetopt/server_opt.h"
 #include "../libs/inet_aux.h"
+#include "../libs/binary_aux.h"
 
 int main(int argc, char *argv[])
 {
-    /* Estrutura gerada pelo utilitario gengetopt */
     struct gengetopt_args_info args_info;
 
-    /* Processa os parametros da linha de comando */
     if (cmdline_parser(argc, argv, &args_info) != 0)
     {
         exit(ERR_ARGS);
     }
 
     /*
-     * Inserir codigo do servidor
+     * Code
      */
-    DEBUG("Código");
+    DEBUG("Not implemented");
 
     cmdline_parser_free(&args_info);
 

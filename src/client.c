@@ -9,6 +9,7 @@
 #include <sys/socket.h>
 #include <unistd.h>
 #include <string.h>
+#include <unistd.h>
 
 #include "../libs/memory.h"
 #include "../libs/debug.h"

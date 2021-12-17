@@ -25,6 +25,7 @@ LDFLAGS=#-pg
 IFLAGS=-linux -brs -brf -br
 
 # ! SERVER
+OUT_SERVER=server
 SERVER=server
 SERVER_OPT_NODIR=server_opt
 SERVER_OPT=$(DIR_GENGETOPT)/$(SERVER_OPT_NODIR)
@@ -32,6 +33,7 @@ SERVER_OBJS=$(DIR_SRC)/$(SERVER).o $(DIR_LIBS)/debug.o $(DIR_LIBS)/memory.o $(DI
 SERVER_HEADERS=$(DIR_SRC)/$(SERVER).c $(DIR_LIBS)/debug.h $(DIR_LIBS)/memory.h $(DIR_LIBS)/string_aux.h $(DIR_LIBS)/inet_aux.h $(DIR_COMMON)/common.h $(SERVER_OPT).h $(DIR_LIBS)/binary_aux.h
 
 # ! CLIENT
+OUT_CLIENT=client
 CLIENT=client
 CLIENT_OPT_NODIR=client_opt
 CLIENT_OPT=$(DIR_GENGETOPT)/$(CLIENT_OPT_NODIR)
@@ -56,10 +58,10 @@ optimize: LDFLAGS += $(OPTIMIZE_FLAGS)
 optimize: $(SERVER) $(CLIENT)
 
 $(SERVER): $(SERVER_OBJS)
-	$(CC) -o $@ $(SERVER_OBJS) $(LIBS)
+	$(CC) -o $(OUT_SERVER) $(SERVER_OBJS) $(LIBS)
 
 $(CLIENT): $(CLIENT_OBJS)
-	$(CC) -o $@ $(CLIENT_OBJS) $(LIBS)
+	$(CC) -o $(OUT_CLIENT) $(CLIENT_OBJS) $(LIBS)
 
 # Dependencies
 $(DIR_SRC)/(SERVER).o: $(SERVER_HEADERS)
